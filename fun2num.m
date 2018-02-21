@@ -4,7 +4,7 @@ n = length(Xf);
 degree = double(feval(symengine, 'degree', pol));
 t = degree/2;
 
-item = feval(symengine,'poly2list',pol, X);
+item = feval(symengine,'poly2list', pol, X);
 nmon = length(item);
 
 c0 = 0;

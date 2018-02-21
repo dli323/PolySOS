@@ -128,16 +128,12 @@ void vector_generator(int degree, double *coeff, Matrix pw, vector<double> &vec)
 	}
 
 	for (int i = 0; i<Nvec; i++)
-	{
 		release_memory(densepwlist[i]);
-	}
 
 	delete[]densepwlist;
 
 	for (int i = 0; i<nmon; i++)
-	{
 		release_memory(pwlist[i]);
-	}
 
 	delete[]pwlist;
 

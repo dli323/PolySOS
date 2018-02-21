@@ -8,23 +8,23 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs, const mxArray *prhs[])
 {
 	int nvar;
 	int degree;
-  int mpw, npw;
-  double *pw;       
-  double *cf;
+    int mpw, npw;
+    double *pw;       
+    double *cf;
 	vector<double> coeff;
 	double cs;
     
 	vector<int> Brow;
 	vector<int> Bcol;
 	vector<double> Bval;
-  double *row, *col, *val;
+    double *row, *col, *val;
 
 	nvar = (int)mxGetScalar(prhs[0]);
 	degree = (int)mxGetScalar(prhs[1]);
-  pw =  mxGetPr(prhs[2]);
-  mpw = (int)mxGetM(prhs[2]);
-  npw = (int)mxGetN(prhs[2]);
-  cf = mxGetPr(prhs[3]);
+    pw =  mxGetPr(prhs[2]);
+    mpw = (int)mxGetM(prhs[2]);
+    npw = (int)mxGetN(prhs[2]);
+    cf = mxGetPr(prhs[3]);
 	cs = mxGetScalar(prhs[4]);
 
 	for (int i = 0; i < mpw; i++)
@@ -220,14 +220,12 @@ void con_moment_generator(int nvar, int degree, ConInfo cstr, vector<int> &row, 
 
 	free(locpow);
 	for (int i = 0; i < Nmat; i++)
-	{
 		release_memory(pwlist[i]);
-	}
+
 	delete[]pwlist;
 	for (int i = 0; i < Nmon; i++)
-	{
 		release_memory(cstrpwlist[i]);
-	}
+
 	delete[]cstrpwlist;
 
 }
